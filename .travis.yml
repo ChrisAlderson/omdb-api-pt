@@ -1,0 +1,27 @@
+sudo: false
+
+language: node_js
+
+node_js:
+  - 6
+  - 7
+  - 8
+
+cache:
+  directories:
+    - node_modules
+
+install:
+  - npm i -g npm@latest
+  - npm install
+
+script:
+  - npm run lint
+  - npm run test
+
+after_success:
+  - npm run coveralls
+
+env:
+  global:
+    secure: FN+tYdZUtI6TdoYtCNpJEVBWHhBp60bOLyhrAtP+ThgsSvcC+7lsBtXFVotg8i8+Dy//1PYU2CUc69B+/2fqNZpF1nUV3po1NPeId7YtWHPEJisf62aEpqKt4oNFtS3q6+ACaC1zl/kDTE4xzDjgZbuAbIrOH6+zimo8UVwxShQSERiexCBSEkLsRgjg5C6QWPpxXnVXLBAG9+xTzvXiFb8D8UWNwyZ4QRyWCc2ztNMIDUClW/Q96F9ZCkgiDCFY6nwunoVuLn0i2WgBFplREACIjLae1hVxfRy/OY11YpjNOFFaoo5czmlaKH54mO0ifJDSoGhEivKlkPKQxlrt4Lt42WFc7ri6AwHxyJNQeTK8Ef7pVRozwpEMfOlcRsmu54WwhqUn51nNsdvI8ebmDvQmQ00ARhf1uIJM/OHNyCpOc5Q8v6cIbfKyLyW7L4PNjZEtsGLfjKFXlIxSaYfpaekilmJWAeefzV2XnbYUnodKpKEbhd2oHxJw068XfqLGeGcOX9Ce9GB54m+8AIyRVbu2YcXj9pWER7YJhZdOTV/q1iqijwNV6j4fIVPJvm9CcahfPTtYFSSSKLxHZpkp4ro3JiJLVQ7CnKJV+Q/4n+9hYMqrkAGQTAfQougb8WNCUI10DWKYtw33wFO7558g5RAje2UPecfCE+mlIlOrycg=

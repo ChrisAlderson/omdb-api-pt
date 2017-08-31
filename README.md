@@ -21,15 +21,14 @@ const OmdbApi = require('omdb-api-pt')
 // Create a new instance of the module.
 const omdb = new OmdbApi({
   apiKey, // Your API key.
-  baseUrl, // The base url of omdb. Defaults to 'https://omdbapi.com/'.
-  debug // Show extra output. Defaults to 'false'.
+  baseUrl // The base url of omdb. Defaults to 'https://omdbapi.com/'.
 })
 ```
 
 #### Example usage
 
 ```js
-omdb.byID({
+omdb.byId({
   imdb: 'tt0412142',
   title: 'House',
   type: 'series',
@@ -55,7 +54,7 @@ omdb.bySearch({
 
 You can run tests with the following npm command:
 ```
- $ API_KEY=[Your API key] npm test
+ $ OMDB_KEY=[Your API key] npm test
 ```
 
 # License

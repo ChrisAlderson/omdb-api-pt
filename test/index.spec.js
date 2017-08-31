@@ -21,6 +21,17 @@ describe('OmdbApi', () => {
     })
   })
 
+  /** @test {OmdbApi#constructor} */
+  it('should throw an error if no API key is given', () => {
+    try {
+      const omdbError = new OmdbApi({})
+      expect(omdbError).to.be.and('object')
+    } catch (err) {
+      expect(err).to.be.an('error')
+      expect(err.message).to.equal('No API key given!')
+    }
+  })
+
   /** @test {OmdbApi#byId} */
   it('should get a show by id', done => {
     omdb.byId({

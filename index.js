@@ -89,6 +89,10 @@ module.exports = class OmdbApi {
    * @param {!string} config.baseUrl=https://omdbapi.com/ - v
    */
   constructor({apiKey, baseUrl = 'https://omdbapi.com/'}) {
+    if (!apiKey) {
+      throw new Error('No API key given!')
+    }
+
     /**
      * Your API key.
      * @type {string}

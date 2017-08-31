@@ -1,13 +1,14 @@
-'use strict';
-
 // Import the necessary modules.
+/* eslint-disable no-console */
 const OmdbApi = require('../omdb-api-pt')
 
 // Create a new instance of the module.
-const omdb = new OmdbApi()
+const omdb = new OmdbApi({
+  apiKey: process.env.OMDB_KEY
+})
 
 // Get by id.
-const byID = omdb.byID({
+const byId = omdb.byId({
   imdb: 'tt0412142',
   title: 'House',
   type: 'series',

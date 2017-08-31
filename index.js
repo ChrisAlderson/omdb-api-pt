@@ -133,7 +133,7 @@ module.exports = class OmdbApi {
     return got.get(this._baseUrl, {
       query,
       json: true
-    }).then(({body}) => body)
+    }).then(({ body }) => body)
   }
 
   /**

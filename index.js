@@ -137,11 +137,23 @@ module.exports = class OmdbApi {
   }
 
   /**
+   * Check if a given type is supported by the OMDB api.
+   * @throws {Error} - TYPE is not a valid value for type!
+   * @param {!string} type - The type to check if it is valid.
+   * @returns {undefined}
+   */
+  _checkType(type) {
+    if (type && OmdbApi._types.indexOf(type) === -1) {
+      throw new Error(`${type} is not a valid value for type!`)
+    }
+  }
+
+  /**
    * Get by id.
-   * @throws {Error} -  imdb and/or title needs to be given!
-   * @throws {Error} -  TYPE is not a valid value for type!
-   * @throws {Error} -  PLOT is not a valid value for plot!
-   * @throws {Error} -  Value for 'tomatoes' has to be a boolean!
+   * @throws {Error} - imdb and/or title needs to be given!
+   * @throws {Error} - TYPE is not a valid value for type!
+   * @throws {Error} - PLOT is not a valid value for plot!
+   * @throws {Error} - Value for 'tomatoes' has to be a boolean!
    * @param {!Object} config - The config object for the method.
    * @param {?string} config.imdb - The imdb id of the content you want to
    * search for.
@@ -159,15 +171,13 @@ module.exports = class OmdbApi {
     if (!imdb && !title) {
       throw new Error(`imdb and/or title needs to be given!`)
     }
-    if (type && OmdbApi._types.indexOf(type) === -1) {
-      throw new Error(`${type} is not a valid value for type!`)
-    }
     if (OmdbApi._plots.indexOf(plot) === -1) {
       throw new Error(`${plot} is not a valid value for plot!`)
     }
     if (typeof tomatoes !== 'boolean') {
       throw new Error(`Value for 'tomatoes' has to be a boolean!`)
     }
+    this._checkType(type)
 
     return this._get({
       i: imdb,
@@ -195,12 +205,10 @@ module.exports = class OmdbApi {
     if (!search) {
       throw new Error(`search is a required field!`)
     }
-    if (type && OmdbApi._types.indexOf(type) === -1) {
-      throw new Error(`${type} is not a valid value for type!`)
-    }
     if (parseInt(page, 10) > 100 || parseInt(page, 10) < 1) {
       throw new Error(`${page} is not a valid value for page!`)
     }
+    this._checkType(type)
 
     return this._get({
       s: search,

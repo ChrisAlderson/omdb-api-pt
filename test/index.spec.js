@@ -87,20 +87,20 @@ describe('OmdbApi', () => {
 
   /** @test {OmdbApi#byId} */
   it('should throw an error when getting by id', () => {
-    expect(omdb.byId.bind(omdb.byId, {
+    expect(omdb.byId.bind(omdb, {
       imdb: undefined,
       title: undefined
     })).to.throw('imdb and/or title needs to be given!')
-    expect(omdb.byId.bind(omdb.byId, {
+    expect(omdb.byId.bind(omdb, {
       imdb: 'tt0412142',
       type: 'faulty'
     })).to.throw('faulty is not a valid value for type!')
-    expect(omdb.byId.bind(omdb.byId, {
+    expect(omdb.byId.bind(omdb, {
       imdb: 'tt0412142',
       type: 'series',
       plot: 'faulty'
     })).to.throw('faulty is not a valid value for plot!')
-    expect(omdb.byId.bind(omdb.byId, {
+    expect(omdb.byId.bind(omdb, {
       imdb: 'tt0412142',
       type: 'series',
       plot: 'full',
@@ -138,14 +138,14 @@ describe('OmdbApi', () => {
 
   /** @test {OmdbApi#bySearch} */
   it('should throw an error when searching', () => {
-    expect(omdb.bySearch.bind(omdb.bySearch, {
+    expect(omdb.bySearch.bind(omdb, {
       search: undefined
     })).to.throw('search is a required field!')
-    expect(omdb.bySearch.bind(omdb.bySearch, {
+    expect(omdb.bySearch.bind(omdb, {
       search: 'House',
       type: 'faulty'
     })).to.throw('faulty is not a valid value for type!')
-    expect(omdb.bySearch.bind(omdb.bySearch, {
+    expect(omdb.bySearch.bind(omdb, {
       search: 'House',
       type: 'series',
       page: 101

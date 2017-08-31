@@ -1,6 +1,6 @@
 {
   "name": "omdb-api-pt",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "An OMDB API wrapper for NodeJS.",
   "dependencies": {
     "debug": "^3.0.1",

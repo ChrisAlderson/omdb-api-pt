@@ -1,6 +1,6 @@
 // Import the necessary modules.
 /* eslint-disable no-console */
-const OmdbApi = require('../omdb-api-pt')
+const OmdbApi = require('..')
 
 // Create a new instance of the module.
 const omdb = new OmdbApi({

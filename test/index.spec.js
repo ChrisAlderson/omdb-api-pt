@@ -1,7 +1,7 @@
 // Import the necessary modules.
 const { expect } = require('chai')
 
-const OmdbApi = require('../omdb-api-pt')
+const OmdbApi = require('..')
 
 /** @test {OmdbApi} */
 describe('OmdbApi', () => {

@@ -97,14 +97,12 @@ module.exports = class OmdbApi {
      * Your API key.
      * @type {string}
      */
-    this._apiKey = apiKey
-
+    this.apiKey = apiKey
     /**
      * Your API key.
      * @type {string}
      */
     this._baseUrl = baseUrl
-
     /**
      * Show extra output.
      * @type {Function}
@@ -116,7 +114,6 @@ module.exports = class OmdbApi {
      * @type {Array<string>}
      */
     OmdbApi._types = ['movie', 'series', 'episode']
-
     /**
      * Allowed plots to search for.
      * @type {Array<string>}
@@ -131,7 +128,7 @@ module.exports = class OmdbApi {
    * cheerio.
    */
   _get(query) {
-    query.apikey = this._apiKey
+    query.apikey = this.apiKey
     this._debug(`Making request to: '${this._baseUrl}?${stringify(query)}'`)
 
     return got.get(this._baseUrl, {

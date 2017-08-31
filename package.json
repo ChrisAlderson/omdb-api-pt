@@ -3,6 +3,7 @@
   "version": "1.0.1",
   "description": "An OMDB API wrapper for NodeJS.",
   "dependencies": {
+    "debug": "^3.0.1",
     "got": "^7.1.0"
   },
   "devDependencies": {

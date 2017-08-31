@@ -1,8 +1,9 @@
-'use strict'
-
 // Import the necessary modules.
+const debug = require('debug')
 const got = require('got')
 const { stringify } = require('querystring')
+
+const { name } = require('./package')
 
 /**
  * The rating model.
@@ -86,9 +87,8 @@ module.exports = class OmdbApi {
    * @param {!Object} config - The config object of the module.
    * @param {!string} config.apiKey - Your API key.
    * @param {!string} config.baseUrl=https://omdbapi.com/ - v
-   * @param {?boolean} [config.debug=false] - Show extra output.
    */
-  constructor({apiKey, baseUrl = 'https://omdbapi.com/', debug = false}) {
+  constructor({apiKey, baseUrl = 'https://omdbapi.com/'}) {
     /**
      * Your API key.
      * @type {string}
@@ -103,9 +103,9 @@ module.exports = class OmdbApi {
 
     /**
      * Show extra output.
-     * @type {boolean}
+     * @type {Function}
      */
-    this._debug = debug
+    this._debug = debug(name)
 
     /**
      * Allowed types to search for.
@@ -128,9 +128,7 @@ module.exports = class OmdbApi {
    */
   _get(query) {
     query.apikey = this._apiKey
-    if (this._debug) {
-      console.warn(`Making request to: '${this._baseUrl}?${stringify(query)}'`)
-    }
+    this._debug(`Making request to: '${this._baseUrl}?${stringify(query)}'`)
 
     return got.get(this._baseUrl, {
       query,

@@ -1,7 +1,6 @@
-'use strict'
-
 // Import the necessary modules.
 const { expect } = require('chai')
+
 const OmdbApi = require('../omdb-api-pt')
 
 /** @test {OmdbApi} */
@@ -17,11 +16,8 @@ describe('OmdbApi', () => {
    * @type {Function}
    */
   before(() => {
-    // Disable the warn logging function to testing.
-    console.warn = () => {}
     omdb = new OmdbApi({
-      apiKey: process.env.API_KEY,
-      debug: true
+      apiKey: process.env.OMDB_KEY
     })
   })
 
@@ -114,9 +110,6 @@ describe('OmdbApi', () => {
 
   /** @test {OmdbApi#bySearch} */
   it('should get shows by searching', done => {
-    omdb = new OmdbApi({
-      apiKey: process.env.API_KEY
-    })
     omdb.bySearch({
       search: 'House',
       type: 'series',

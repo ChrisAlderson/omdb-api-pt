@@ -1,9 +1,18 @@
 # omdb-api-pt
 
-[![Build Status](https://travis-ci.org/ChrisAlderson/omdb-api-pt.svg?branch=master)](https://travis-ci.org/ChrisAlderson/omdb-api-pt)
-[![Coverage Status](https://coveralls.io/repos/github/ChrisAlderson/omdb-api-pt/badge.svg?branch=master)](https://coveralls.io/github/ChrisAlderson/omdb-api-pt?branch=master)
-[![Dependency Status](https://david-dm.org/ChrisAlderson/omdb-api-pt.svg)](https://david-dm.org/ChrisAlderson/omdb-api-pt)
-[![devDependency Status](https://david-dm.org/ChrisAlderson/omdb-api-pt/dev-status.svg)](https://david-dm.org/ChrisAlderson/omdb-api-pt?type=dev)
+[![Build Status][travis-image]][travis-url]
+[![Coverage Status][coverage-image]][coverage-url]
+[![Dependency Status][david-image]][david-url]
+[![devDependency Status][dev-david-image]][dev-david-url]
+
+[travis-url]: https://travis-ci.org/ChrisAlderson/omdb-api-pt
+[travis-image]: https://travis-ci.org/ChrisAlderson/omdb-api-pt.svg?branch=master
+[coverage-url]: https://coveralls.io/github/ChrisAlderson/omdb-api-pt?branch=master
+[coverage-image]: https://coveralls.io/repos/github/ChrisAlderson/omdb-api-pt/badge.svg?branch=master
+[david-url]: https://david-dm.org/ChrisAlderson/omdb-api-pt
+[david-image]: https://david-dm.org/ChrisAlderson/omdb-api-pt.svg
+[dev-david-url]: https://david-dm.org/ChrisAlderson/omdb-api-pt?type=dev
+[dev-david-image]: https://david-dm.org/ChrisAlderson/omdb-api-pt/dev-status.svg
 
 An OMDB API wrapper for NodeJS.
 
